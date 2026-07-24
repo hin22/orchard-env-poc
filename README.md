@@ -49,15 +49,35 @@ ESP32 + DHT22 → AWS IoT Core → Phase 1 と同じパイプライン
 
 ## デモ（スクリーンショット）
 
-| # | 内容 |
-|---|------|
-| 1 | GitHub リポジトリ |
-| 2 | DynamoDB（SensorReadings） |
-| 3 | Lambda テスト成功 |
-| 4 | EventBridge トリガー |
-| 5 | CloudWatch ダッシュボード |
-| 6 | CloudWatch アラーム |
-| 7 | Slack 通知 |
+### 1. GitHub リポジトリ
+![GitHub リポジトリ](docs/01-readme.png)
+
+### 2. AWS リージョン（東京）
+![AWS リージョン](docs/02-aws-region-tokyo.png)
+
+### 3. DynamoDB（SensorReadings）
+![DynamoDB テーブル](docs/03-dynamodb-sensorreadings.png)
+
+### 4. Lambda テスト成功
+![Lambda テスト](docs/04-lambda-test.png)
+
+### 5. DynamoDB データ確認
+![DynamoDB Items](docs/05-dynamodb-items.png)
+
+### 6. EventBridge トリガー
+![EventBridge](docs/06-eventbridge-trigger.png)
+
+### 7. CloudWatch メトリクス
+![CloudWatch Metrics](docs/08-OrchardEnv-2metrics.png)
+
+### 8. CloudWatch ダッシュボード
+![CloudWatch Dashboard](docs/09-orcahrd-env-dashboard.png)
+
+### 9. CloudWatch アラーム
+![CloudWatch Alarm](docs/10-cloudwatch-alarm.png)
+
+### 10. Slack 通知
+![Slack 通知](docs/11-orchard-slackalarm.png)
 
 ※ 画像は PC 上に保存。今後 `docs/screenshots/` に追加予定
 
