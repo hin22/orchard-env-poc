@@ -30,7 +30,6 @@ AWS 上で小さく **温湿度モニタリング** を試しています。
 | DynamoDB | データ保存 |
 | CloudWatch | ダッシュボード・閾値アラーム |
 
-ESP32 + DHT22 → AWS IoT Core → Phase 1 と同じパイプライン
 
 ## 構成（Phase 2：予定）
 
