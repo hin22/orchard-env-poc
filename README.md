@@ -21,14 +21,7 @@ AWS 上で小さく **温湿度モニタリング** を試しています。
 
 ※ 農業の専門家ではありません。個人的な課題意識から始めた学習プロジェクトです。
 
-## 構成（Phase 1：ダミーデータ）
-
-| サービス | 役割 |
-|----------|------|
-| EventBridge | 5分ごとに定期実行 |
-| Lambda | 温湿度データ（テスト用）を生成 |
-| DynamoDB | データ保存 |
-| CloudWatch | ダッシュボード・閾値アラーム |
+## アーキテクチャ（Phase 1：ダミーデータ）
 
 
 ## 構成（Phase 2：予定）
@@ -45,23 +38,46 @@ ESP32 + DHT22 → AWS IoT Core → Phase 1 と同じパイプライン
 | 湿度 | % |
 | アラーム | 湿度 > 80%（**検証用の仮閾値**。農業の正式基準ではありません） |
 
-## 進捗
-
-- [ ] Phase 1：AWS パイプライン（ダミーデータ）
-- [ ] CloudWatch ダッシュボード
-- [ ] CloudWatch アラーム
-- [ ] Phase 2：ESP32 + DHT22 連携
-
 ## 使用 AWS サービス
 
 - Amazon EventBridge
-- AWS Lambda
+- AWS Lambda（orchard-sensor-ingest / orchard-slack-notify）
 - Amazon DynamoDB
-- Amazon CloudWatch
-- （Phase 2）AWS IoT Core
+- Amazon CloudWatch（Dashboard / Alarm / Metrics）
+- Amazon SNS
+- （Phase 2 予定）AWS IoT Core
+
+## デモ（スクリーンショット）
+
+| # | 内容 |
+|---|------|
+| 1 | GitHub リポジトリ |
+| 2 | DynamoDB（SensorReadings） |
+| 3 | Lambda テスト成功 |
+| 4 | EventBridge トリガー |
+| 5 | CloudWatch ダッシュボード |
+| 6 | CloudWatch アラーム |
+| 7 | Slack 通知 |
+
+※ 画像は PC 上に保存。今後 `docs/screenshots/` に追加予定
+
+## 進捗
+
+- [x] Phase 1：AWS パイプライン（ダミーデータ）
+- [x] CloudWatch ダッシュボード
+- [x] CloudWatch アラーム
+- [x] SNS → Email 通知
+- [x] SNS → Slack 通知
+- [ ] Phase 2：ESP32 + DHT22 連携
+- [ ] 現場・ベランダでの実測データ
+
+## JET との関連（参考）
+
+- **01 インフラ導入**：監視基盤の構築（PoC）
+- **04 運用・監視**：CloudWatch ダッシュボード + アラーム + 通知
 
 ## 今後
 
-- 実データでの動作確認
-- 構成図・スクリーンショットの追加
-- 監視の考え方を IT インフラの現場でも学びたい
+- ESP32 + DHT22 による実測データ連携
+- 先輩のフィードバックを踏まえた改善（DB 選定、閾値など）
+- AWS 資格・インフラ現場での学習
