@@ -49,6 +49,8 @@ ESP32 + DHT22 → AWS IoT Core → Phase 1 と同じパイプライン
 
 ## デモ（スクリーンショット）
 
+## デモ（スクリーンショット）
+
 ### 1. GitHub リポジトリ
 ![GitHub リポジトリ](docs/01-readme.png)
 
@@ -67,17 +69,23 @@ ESP32 + DHT22 → AWS IoT Core → Phase 1 と同じパイプライン
 ### 6. EventBridge トリガー
 ![EventBridge](docs/06-eventbridge-trigger.png)
 
-### 7. CloudWatch メトリクス
+### 7. CloudWatch テスト
+![CloudWatch Test](docs/07-cloudwatch-test.png)
+
+### 8. CloudWatch メトリクス
 ![CloudWatch Metrics](docs/08-OrchardEnv-2metrics.png)
 
-### 8. CloudWatch ダッシュボード
+### 9. CloudWatch ダッシュボード
 ![CloudWatch Dashboard](docs/09-orcahrd-env-dashboard.png)
 
-### 9. CloudWatch アラーム
+### 10. CloudWatch アラーム
 ![CloudWatch Alarm](docs/10-cloudwatch-alarm.png)
 
-### 10. Slack 通知
-![Slack 通知](docs/11-orchard-slackalarm.png)
+### 11. Slack 通知（テスト）
+![Slack test](docs/11-orchard-slackalarm.png)
+
+### 12. Slack 通知（CloudWatch アラーム）
+![Slack alarm](docs/12-orchard-slack-80per.png)
 
 ※ 画像は PC 上に保存。今後 `docs/screenshots/` に追加予定
 
@@ -90,11 +98,6 @@ ESP32 + DHT22 → AWS IoT Core → Phase 1 と同じパイプライン
 - [x] SNS → Slack 通知
 - [ ] Phase 2：ESP32 + DHT22 連携
 - [ ] 現場・ベランダでの実測データ
-
-## JET との関連（参考）
-
-- **01 インフラ導入**：監視基盤の構築（PoC）
-- **04 運用・監視**：CloudWatch ダッシュボード + アラーム + 通知
 
 ## 今後
 
